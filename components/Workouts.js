@@ -1,12 +1,11 @@
-import React from 'react';
 import { View, Text } from 'react-native';
 import { Button } from 'react-native-paper';
 import styles from '../style/style';
 
 const Workouts = ({ route }) => {
-  const { workoutData } = route.params;
-
-  // Demotiedot
+  const { workoutData } = route.params || {};
+    
+  
   const demoWorkouts = [
     { workoutType: 'running', distance: '5', duration: '30', selectedDate: '2022-03-15' },
     { workoutType: 'swimming', distance: '1', duration: '45', selectedDate: '2015-03-16' },

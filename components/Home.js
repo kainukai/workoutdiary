@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import { View, TextInput, Text, Keyboard, TouchableWithoutFeedback } from 'react-native';
 import { Button } from 'react-native-paper';
 import { Calendar } from 'react-native-calendars';
-import { useNavigation } from '@react-navigation/native'; // Import useNavigation hook
+import { useNavigation } from '@react-navigation/native'; 
 import styles from '../style/style';
 
 const Home = () => {
     
-  const navigation = useNavigation(); // Initialize navigation
+  const navigation = useNavigation(); 
   const [selectedButton, setSelectedButton] = useState(null);
   const [selectedDate, setSelectedDate] = useState(null);
   const [distance, setDistance] = useState('');
@@ -30,14 +30,14 @@ const Home = () => {
   };
 
   const handleAddWorkout = () => {
-    // Tarkista, että kaikki tarvittavat tiedot ovat valittu
+    
     if (!selectedButton || !distance || !duration || !selectedDate) {
-      // Jos jokin tieto puuttuu, näytä käyttäjälle virheviesti tai tee jotain muuta
+      
       alert('Please fill in all required fields.');
-      return; // Älä siirry workouts-sivulle
+      return; 
     }
 
-    // Kaikki tarvittavat tiedot ovat valittu, siirry workouts-sivulle
+    
     const workoutData = {
       workoutType: selectedButton,
       distance,
