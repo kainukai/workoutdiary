@@ -13,6 +13,8 @@ const Home = () => {
   const [distance, setDistance] = useState('');
   const [duration, setDuration] = useState('');
 
+
+
   const toggleButton = (buttonName) => {
     setSelectedButton(buttonName === selectedButton ? null : buttonName);
   };
@@ -30,9 +32,7 @@ const Home = () => {
   };
 
   const handleAddWorkout = () => {
-    
     if (!selectedButton || !distance || !duration || !selectedDate) {
-      
       alert('Please fill in all required fields.');
       return; 
     }
@@ -44,6 +44,8 @@ const Home = () => {
       duration,
       selectedDate
     };
+
+    
     navigation.navigate('Workouts', { workoutData });
   };
 
