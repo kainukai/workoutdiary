@@ -33,11 +33,22 @@ const Home = () => {
 
   const handleAddWorkout = () => {
     if (!selectedButton || !distance || !duration || !selectedDate) {
-      alert('Please fill in all required fields.');
+      alert('Fill in all required fields.');
       return; 
     }
 
+    if (distance <= 0 || duration <= 0) {
+      alert('Distance and duration must be positive values.');
+      return;
+    }
     
+    if (selectedButton.includes(',') || selectedButton.includes('.') ||
+    distance.includes(',') || distance.includes('.') ||
+    duration.includes(',') || duration.includes('.')) {
+    alert('Input values cannot contain commas or periods.');
+    return;
+  }
+
     const workoutData = {
       workoutType: selectedButton,
       distance,
